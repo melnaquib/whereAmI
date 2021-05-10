@@ -10,8 +10,9 @@
 		<param name="base_frame_id" value="robot_footprint"/>
 		<param name="global_frame_id" value="map"/>
 
-		<param name="initial_pose_y" value="-1.0"/>
-		<param name="initial_pose_y" value="-1.0"/>
+		<param name="initial_pose_x" value="-7.0"/>
+		<param name="initial_pose_y" value="4.5"/>
+		<param name="initial_pose_a" value="-1.507"/> -->
 
 <!--
 		<param name="recovery_alpha_slow" value="0.001"/>
@@ -31,17 +32,16 @@
 
 
 		<param name="odom_model_type" value="diff-corrected"/>
-		<param name="odom_alpha1" value="0.0"/>
-		<param name="odom_alpha2" value="0.0"/>
-		<param name="odom_alpha3" value="0.0"/>
-		<param name="odom_alpha4" value="0.0"/>
+		<param name="odom_alpha1" value="0.05"/>
+		<param name="odom_alpha2" value="0.05"/>
+		<param name="odom_alpha3" value="0.05"/>
+		<param name="odom_alpha4" value="0.05"/>
     
       
 	</node>
 	
 	<!-- Move Node -->
   <node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
-		<remap from="/scan" to="/my_robot/laser/scan"/>
 
     <param name="base_global_planner" value="navfn/NavfnROS" />
     <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>    
